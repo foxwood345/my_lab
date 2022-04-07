@@ -1,0 +1,5 @@
+libgtk2.0-dev
+ffmpeg
+libsm6
+libxext6
+libgl1

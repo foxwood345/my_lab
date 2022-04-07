@@ -8,7 +8,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 model_dict = {'mnist' : BasicModel(),}
 
-@st.cache
+
 def load_model(model_name):
   with torch.no_grad():
     model = model_dict[model_name]
@@ -21,7 +21,6 @@ def load_model(model_name):
     return model
 
 
-@st.cache
 def inference(model, image_tensor):
   # image = utils.load_image(image_filename)
   # transform = transforms.Compose([

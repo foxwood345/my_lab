@@ -12,10 +12,10 @@ model_dict = {'mnist' : BasicModel(),}
 def load_model(model_name):
   with torch.no_grad():
     model = model_dict[model_name]
-    model_path = './saved_models/' + model_name + '.pth'
-    # state_dict = torch.load(model_path)
-    # model.load_state_dict(state_dict)
-    model = torch.load(model_path)
+    model_path = './saved_models/' + model_name + '.ckpt'
+    state_dict = torch.load(model_path)
+    model.load_state_dict(state_dict)
+    # model = torch.load(model_path)
     # model.to(device)
     model.eval()
     return model

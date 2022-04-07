@@ -14,7 +14,7 @@ def load_model(model_name):
     model = model_dict[model_name]
     model_path = './saved_models/' + model_name + '.ckpt'
     state_dict = torch.load(model_path)
-    model.load_state_dict(state_dict)
+    model.load_state_dict(state_dict, strict=False)
     # model = torch.load(model_path)
     # model.to(device)
     model.eval()
